@@ -6,6 +6,13 @@ module.exports = (app, connection) => {
 
     /*Post API to save profile*/
     app.post("/api/image", (req, res) => {
+        const fileName = req.body.file_name;
+        const idxDot = fileName.lastIndexOf(".") + 1;
+        const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+        } else {
+            return res.status(400).json({ message: 'Only image media is suported' });
+        };
         const image = new ImageGalarry({
             file_name: req.body.file_name,
             file_data: req.body.file_data,

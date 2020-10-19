@@ -56,6 +56,8 @@ export default class galarry extends Component {
     }
 
     handleSaveFile = () => {
+        if (!this.state.fileName) return this.handleResponsePopUp('Something went wrong please select another image and try again.', 'Error', false, true);
+        if (!this.state.fileData) return this.handleResponsePopUp('Something went wrong please select another image and try again.', 'Error', false, true);
         const postData = {
             file_name: this.state.fileName,
             file_data: this.state.fileData,

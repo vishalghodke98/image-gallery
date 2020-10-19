@@ -4,6 +4,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import { Button } from '@material-ui/core';
 import './fileUpload.css';
 import Image from './image';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Body({ handleUploadFile, imgList }) {
 
@@ -31,6 +32,9 @@ function Body({ handleUploadFile, imgList }) {
                 </div>
                 <div className='img_container'>
                     <div className='img_list'>
+                        {!imgList.length ? <div style={{ position: 'absolute', top: '50%', left: '50%' }}>
+                            <CircularProgress color="secondary" />
+                        </div> : null}
                         {imgList && imgList?.map((record, index) => {
                             return <Image
                                 className='image'

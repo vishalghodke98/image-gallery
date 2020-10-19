@@ -2,6 +2,7 @@ import React from 'react';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import { Button } from '@material-ui/core';
 import './fileUpload.css';
+import FileUploadSvg from './upload.svg';
 
 function fileupload({ handleUploadFile }) {
     return (
@@ -12,7 +13,7 @@ function fileupload({ handleUploadFile }) {
                     variant="contained"
                     component="label"
                 >
-                    <CloudUploadIcon className='upload_icon' />
+                    <FileUploadSvg className='upload_icon' />
                     <span className='upload_lable'>Upload</span>
                     <input
                         onChange={(event) => handleUploadFile}

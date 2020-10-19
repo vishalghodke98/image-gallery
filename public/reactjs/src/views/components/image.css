@@ -26,8 +26,11 @@
     font-size: 18px;
     font-weight: bold;
     padding: 10px;
-    overflow-wrap: break-word;
   }
- 
-  
-  
+
+  .name {
+    white-space: nowrap; 
+    width: 350px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }

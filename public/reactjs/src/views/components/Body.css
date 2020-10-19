@@ -1,6 +1,6 @@
 .body {
     padding: 30px;
-    text-align: justify;
+    text-align: center;
     height: 100vh;
     color: white;
     overflow-y: overlay;
@@ -23,7 +23,7 @@
 
 .img_container {
     margin-top: 20px;
-    max-height : 500px;
+    max-height : 530px;
     overflow-y: scroll;
 }
 
@@ -79,15 +79,6 @@
 
 .body_icons > .MuiSvgIcon-root {
     margin-right: 20px;
-}
-
-.body_infoText > h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.body_infoText > p {
-    font-size: 14px;
 }
 
 .spiner {

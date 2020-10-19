@@ -48,10 +48,10 @@ export default class galarry extends Component {
     handleGetImagesList = () => {
         axios.get('/api/image').then(response => {
             this.setState({
-                imagesList: response.data
+                imagesList: response.data.reverse()
             });
         }).catch(error => {
-            return this.handleResponsePopUp(error.response.data.message ? error.response.data.message : error.message, 'Error', false, true);
+            return this.handleResponsePopUp(error.response.data.message, 'Error', false, true);
         });
     }
 
@@ -63,9 +63,10 @@ export default class galarry extends Component {
             file_data: this.state.fileData,
         };
         axios.post('/api/image', postData).then(response => {
+            this.handleGetImagesList();
             return this.handleResponsePopUp(response.data.message, 'Success', true, false);
         }).catch(error => {
-            return this.handleResponsePopUp(error.response.data.message, 'Error', false, true);
+            return this.handleResponsePopUp(error.response.data.message ? error.response.data.message : 'Somethig went wrong plese try again', 'Error', false, true);
         });
     };
 

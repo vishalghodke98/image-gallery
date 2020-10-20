@@ -5,7 +5,7 @@ function Header() {
 
     return (
         <div className='header'>
-            <h2>Gallery</h2>
+            <h2>YouFrame</h2>
         </div>
     )
 }
